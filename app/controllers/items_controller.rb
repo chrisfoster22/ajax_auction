@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :refresh_bid_amount]
 
   # GET /items
   def index
@@ -38,6 +38,10 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def refresh_bid_amount
+    @item.highest_bid_amount
   end
 
   # DELETE /items/1

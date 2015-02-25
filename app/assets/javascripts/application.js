@@ -16,4 +16,13 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function() {
+  $(document).foundation();
+  var id = $("#bid_item_id")
+  if (id.length > 0) {
+    setInterval( function() {
+      $.ajax("/items/" + id.val() + "/refresh_bid_amount");
+      }, 5000
+    );
+  }
+});
