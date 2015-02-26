@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
   end
 
   def refresh_bid_amount
-    @item.highest_bid_amount
+  
   end
 
   # DELETE /items/1
